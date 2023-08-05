@@ -1,0 +1,34 @@
+
+{
+    "name": "AutoClose [OLK]",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "description": "AutoClose [OLK]",
+
+    "icons": {
+        "128": "icon.png"
+    },
+    "action": {
+        "default_popup": "prosurf.html",
+        "default_icon": {
+            "128": "icon.png"
+        }
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+
+    "permissions": [
+        "tabs"
+    ],
+
+    "host_permissions": ["<all_urls>"]
+}
