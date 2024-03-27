@@ -1,0 +1,36 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "NirvanaSurf: Adult and Scam Website Blocker",
+  "version": "1.1.0",
+  "description": "18+ Adult and Scam Website Blocker. It doesn't affect normal browsing, so feel free and enjoy.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_icon": "icons/icon48.png",
+    "default_popup": "src/popup/popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/blockedPage/style.css",
+        "src/blockedPage/blockedPage.html"
+      ],
+      "matches": []
+    }
+  ],
+  "incognito": "split"
+}
